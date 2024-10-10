@@ -1,17 +1,54 @@
-%full-size {
-    width: 100vw;
-    height: 100vh;
-}
-  
 .app-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    @extend %full-size;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
-.coming-soon {
-    color: white;
-    font-size: 7.5vw;
+.is-mobile .toolbar {
+    position: fixed;
+    z-index: 2;
+}
+  
+.sidenav-container {
+    flex: 1;
+}
+  
+.is-mobile .sidenav-container {
+    flex: 1 0 auto;
+}
+
+:host-context(.dark-theme) {
+    mat-toolbar {
+        background-color: #424242;
+        color: #FFFFFF;
+    }
+    
+    mat-sidenav-container {
+        background-color: #303030;
+    }
+
+    mat-sidenav {
+        background-color: #383838; /* Darker grey for sidenav */
+        color: #FFFFFF;
+    }
+}
+
+:host-context(.light-theme) {
+    mat-toolbar {
+        background-color: #F5F5F5;
+        color: #333333;
+    }
+    
+    mat-sidenav-container {
+        background-color: #FFFFFF;
+    }
+
+    mat-sidenav {
+        background-color: #E0E0E0; /* Lighter grey for sidenav */
+        color: #333333;
+    }
 }
