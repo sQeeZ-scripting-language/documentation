@@ -11,7 +11,7 @@ import { ScreenDirective } from './directives/screen.directive';
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements AfterViewInit {
-  title = 'playground';
+  title = 'documentation';
   public screenWidth: number = 0;
   public screenHeight: number = 0;
 
