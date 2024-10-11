@@ -16,6 +16,6 @@
         "FUNCTIONS": "Funciones",
         "LISTS": "Listas",
         "OBJECTS": "Objetos",
-        "COMMON_ERRORS": "Mensajes de error comunes"
+        "COMMON_ERROR_MESSAGES": "Mensajes de error comunes"
     }
 }

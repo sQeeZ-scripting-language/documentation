@@ -57,7 +57,7 @@ export class DataService {
       path: 'objects'
     }]
   }, {
-    title: 'COMMON_ERRORS',
+    title: 'COMMON_ERROR_MESSAGES',
     path: 'common-errors'
   }];
 
