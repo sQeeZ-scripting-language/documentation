@@ -5,19 +5,19 @@
         </button>
         <div>
             <button mat-icon-button [matMenuTriggerFor]="menu" class="language-trigger">
-                <span [class]="currentLanguage.flag"></span>
+                <span [class]="'fi fi-' + currentLanguage.id"></span>
             </button>
             <mat-menu #menu="matMenu">
                 @for (lang of languages; track lang) {
-                    @if (lang.i18n !== currentLanguage.i18n) {
+                    @if (lang.id !== currentLanguage.id) {
                         <button class="language-select" (click)="setLanguage(lang)" mat-menu-item>
-                            <span [class]="lang.flag"></span>
+                            <span [class]="'fi fi-' + lang.id"></span>
                             <span>{{lang.name}}</span>
                         </button>
                     }
                 }
             </mat-menu>
-            <button mat-icon-button (click)="toggleTheme()" [matTooltip]="currentTheme === 'light' ? 'Dark Mode' : 'Light Mode'">
+            <button mat-icon-button (click)="toggleTheme()" [matTooltip]="currentTheme === 'light' ? translate('APP.DARK_MODE') : translate('APP.LIGHT_MODE')">
                 <mat-icon> {{ currentTheme === 'light' ? 'light_mode' : 'dark_mode' }} </mat-icon>
             </button>
         </div>

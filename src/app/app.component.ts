@@ -10,7 +10,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { isPlatformBrowser } from '@angular/common';
 import { MatMenuModule } from '@angular/material/menu';
 import { Language } from './interfaces/language.interface';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -25,33 +25,31 @@ export class AppComponent implements OnInit, OnDestroy {
   public mobileQuery!: MediaQueryList;
   public currentTheme: string = 'dark';
   public languages: Language[] = [{
-    name: 'English',
-    i18n: 'en',
-    flag: 'fi fi-gb'
+    id: 'gb',
+    name: 'English'
   }, {
-    name: 'Español',
-    i18n: 'es',
-    flag: 'fi fi-es'
+    id: 'es',
+    name: 'Español'
   }, {
-    name: 'Français',
-    i18n: 'fr',
-    flag: 'fi fi-fr'
+    id: 'fr',
+    name: 'Français'
   }, {
-    name: 'Deutsch',
-    i18n: 'de',
-    flag: 'fi fi-de'
+    id: 'de',
+    name: 'Deutsch'
   }];
   public currentLanguage: Language = {
-    name: 'English',
-    i18n: 'en',
-    flag: 'fi fi-gb'
+    id: 'gb',
+    name: 'English'
   };
     
   public fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
 
   private _mobileQueryListener: () => void;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: any) {
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: any,
+    private translateService: TranslateService
+  ) {
     const changeDetectorRef = inject(ChangeDetectorRef);
     const media = inject(MediaMatcher);
 
@@ -71,11 +69,16 @@ export class AppComponent implements OnInit, OnDestroy {
 
   setLanguage(language: Language): void {
     this.currentLanguage = language;
+    this.translateService.use(this.currentLanguage.id);
   }
 
   toggleTheme(): void {
     this.currentTheme = this.currentTheme === 'dark' ? 'light' : 'dark';
     this.setTheme();
+  }
+
+  translate(key: string): string {
+    return this.translateService.instant(key);
   }
 
   private getSystemTheme(): string {
