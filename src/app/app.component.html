@@ -29,7 +29,9 @@
         <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
             <h2 class="heading">{{ 'SIDENAV.TABLE_OF_CONTENTS' | translate }}</h2>
             <mat-nav-list>
-
+                @for (section of content; track section) {
+                    <ng-container *ngTemplateOutlet="renderContent; context: { $implicit: section }"></ng-container>
+                }
             </mat-nav-list>
         </mat-sidenav>
         <mat-sidenav-content class="sidenav-content">
@@ -46,3 +48,23 @@
         </mat-sidenav-content>
     </mat-sidenav-container>
 </div>
+
+<ng-template #renderContent let-section>
+    @if(section.content && section.content.length > 0) {
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+            <mat-panel-title>
+                <a [routerLink]="section.path">{{ section.title }}</a>
+            </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            @for(subSection of section.content; track subSection) {
+                <ng-container *ngTemplateOutlet="renderContent; context: { $implicit: subSection }"></ng-container>
+            }
+        </mat-expansion-panel>
+    } @else {
+        <mat-list-item>
+            <a [routerLink]="section.path">{{ section.title }}</a>
+        </mat-list-item>
+    }
+</ng-template>

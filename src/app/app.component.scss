@@ -76,6 +76,15 @@ router-outlet {
     }
 }
 
+mat-expansion-panel {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+a {
+    color: white;
+}
+
 :host-context(.dark-theme) {
     mat-toolbar {
         background-color: #424242;

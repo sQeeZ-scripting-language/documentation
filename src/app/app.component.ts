@@ -1,22 +1,24 @@
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, Inject, OnDestroy, OnInit, PLATFORM_ID, inject } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { MatMenuModule } from '@angular/material/menu';
 import { Language } from './interfaces/language.interface';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { DataService } from './services/data.service';
+import { MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle } from '@angular/material/expansion';
+import { Content } from './interfaces/content.interface';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, TranslateModule, MatToolbarModule, MatButtonModule, MatIconModule, MatSidenavModule, MatListModule, MatTooltipModule, MatMenuModule],
+  imports: [CommonModule, RouterOutlet, RouterModule, TranslateModule, MatToolbarModule, MatButtonModule, MatIconModule, MatSidenavModule, MatListModule, MatTooltipModule, MatMenuModule, MatExpansionPanel, MatExpansionPanelTitle, MatExpansionPanelHeader],
   providers: [],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -26,6 +28,7 @@ export class AppComponent implements OnInit, OnDestroy {
   public mobileQuery!: MediaQueryList;
   public currentTheme: string = 'dark';
   public languages: Language[] = [];
+  public content: Content[] = [];
   public currentLanguage: Language = {
     id: 'gb',
     name: 'English'
@@ -50,6 +53,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.currentTheme = this.getSystemTheme();
     this.setTheme();
     this.languages = this.dataService.getLanguages();
+    this.content = this.dataService.getContent();
   }
 
   ngOnDestroy(): void {

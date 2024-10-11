@@ -67,15 +67,7 @@ export class DataService {
     return this.languages;
   }
 
-  buildPath(contentItem: Content, parentPath: string = ''): string {
-    const fullPath = `${parentPath}/${contentItem.path}`;
-    
-    if (contentItem.content) {
-      contentItem.content.forEach(subContent => {
-        this.buildPath(subContent, fullPath);
-      });
-    }
-    
-    return fullPath;
+  getContent(): Content[] {
+    return this.content;
   }
 }
