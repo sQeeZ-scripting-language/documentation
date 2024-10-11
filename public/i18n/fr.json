@@ -2,5 +2,8 @@
     "APP": {
         "LIGHT_MODE": "Mode Clair",
         "DARK_MODE": "Mode Sombre"
+    },
+    "SIDENAV": {
+        "TABLE_OF_CONTENTS": "Table des Matières"
     }
 }

@@ -2,5 +2,8 @@
     "APP": {
         "LIGHT_MODE": "Heller Modus",
         "DARK_MODE": "Dunkler Modus"
+    },
+    "SIDENAV": {
+        "TABLE_OF_CONTENTS": "Inhaltsverzeichnis"
     }
 }

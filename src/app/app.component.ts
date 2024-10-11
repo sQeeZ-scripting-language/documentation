@@ -42,8 +42,6 @@ export class AppComponent implements OnInit, OnDestroy {
     name: 'English'
   };
     
-  public fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
-
   private _mobileQueryListener: () => void;
 
   constructor(
