@@ -29,3 +29,9 @@ app-root {
     padding: 0;
     margin: 0;
 }
+
+.documentation-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
