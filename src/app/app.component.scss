@@ -50,6 +50,28 @@
     transform: translateY(-2px);
 }
 
+.sidenav-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+router-outlet {
+    flex: 1;
+    display: flex;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    button {
+        width: 50%;
+        border-radius: 0;
+    }
+}
+
 :host-context(.dark-theme) {
     mat-toolbar {
         background-color: #424242;

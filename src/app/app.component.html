@@ -33,8 +33,17 @@
                 }
             </mat-nav-list>
         </mat-sidenav>
-        <mat-sidenav-content>
+        <mat-sidenav-content class="sidenav-content">
             <router-outlet></router-outlet>
+            <div class="controls">
+                <button mat-raised-button color="accent">
+                    <mat-icon>arrow_back</mat-icon>
+                </button>
+                <div></div>
+                <button mat-raised-button color="accent">
+                    <mat-icon>arrow_forward</mat-icon>
+                </button>
+            </div>
         </mat-sidenav-content>
     </mat-sidenav-container>
 </div>
