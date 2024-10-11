@@ -15,12 +15,14 @@ import { CommonErrorMessagesComponent } from './components/common-error-messages
 
 export const routes: Routes = [
     { path: '', component: MainComponent },
-    { path: 'getting-started', component: GettingStartedComponent, children: [
+    { path: 'getting-started', children: [
+        { path: '', component: GettingStartedComponent },
         { path: 'installation', component: InstallationComponent },
         { path: 'usage', component: UsageComponent },
         { path: 'first-program', component: FirstProgramComponent }
     ]},
-    { path: 'programming', component: ProgrammingComponent, children: [
+    { path: 'programming', children: [
+        { path: '', component: ProgrammingComponent },
         { path: 'variables', component: VariablesComponent },
         { path: 'operators', component: OperatorsComponent },
         { path: 'control-structures', component: ControlStructuresComponent },

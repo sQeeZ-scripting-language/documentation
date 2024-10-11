@@ -26,35 +26,35 @@ export class DataService {
     path: 'getting-started',
     content: [{
       title: 'INSTALLATION',
-      path: 'installation',
+      path: 'getting-started/installation',
     }, {
       title: 'USAGE',
-      path: 'usage'
+      path: 'getting-started/usage'
     }, {
       title: 'FIRST_PROGRAM',
-      path: 'first-program'
+      path: 'getting-started/first-program'
     }]
   }, {
     title: 'PROGRAMMING',
     path: 'programming',
     content: [{
       title: 'VARIABLES',
-      path: 'variables'
+      path: 'programming/variables'
     }, {
       title: 'OPERATORS',
-      path: 'operators'
+      path: 'programming/operators'
     }, {
       title: 'CONTROL_STRUCTURES',
-      path: 'control-structures'
+      path: 'programming/control-structures'
     }, {
       title: 'FUNCTIONS',
-      path: 'functions'
+      path: 'programming/functions'
     }, {
       title: 'LISTS',
-      path: 'lists'
+      path: 'programming/lists'
     }, {
       title: 'OBJECTS',
-      path: 'objects'
+      path: 'programming/objects'
     }]
   }, {
     title: 'COMMON_ERROR_MESSAGES',
