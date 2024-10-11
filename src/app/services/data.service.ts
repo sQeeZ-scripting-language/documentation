@@ -58,7 +58,7 @@ export class DataService {
     }]
   }, {
     title: 'COMMON_ERROR_MESSAGES',
-    path: 'common-errors'
+    path: 'common-error-messages'
   }];
 
   constructor() {}
