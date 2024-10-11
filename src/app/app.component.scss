@@ -21,6 +21,11 @@
     flex: 1 0 auto;
 }
 
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+}
+
 :host-context(.dark-theme) {
     mat-toolbar {
         background-color: #424242;
@@ -38,6 +43,14 @@
 }
 
 :host-context(.light-theme) {
+    button {
+        color: #333333;
+    }
+
+    button:hover {
+        background-color: #FFFFFF;
+    }
+
     mat-toolbar {
         background-color: #F5F5F5;
         color: #333333;
