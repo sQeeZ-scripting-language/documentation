@@ -10,11 +10,12 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { isPlatformBrowser } from '@angular/common';
 import { MatMenuModule } from '@angular/material/menu';
 import { Language } from './interfaces/language.interface';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatToolbarModule, MatButtonModule, MatIconModule, MatSidenavModule, MatListModule, MatTooltipModule, MatMenuModule],
+  imports: [RouterOutlet, TranslateModule, MatToolbarModule, MatButtonModule, MatIconModule, MatSidenavModule, MatListModule, MatTooltipModule, MatMenuModule],
   providers: [],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
