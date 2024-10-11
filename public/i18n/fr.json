@@ -4,6 +4,18 @@
         "DARK_MODE": "Mode Sombre"
     },
     "SIDENAV": {
-        "TABLE_OF_CONTENTS": "Table des Matières"
+        "TABLE_OF_CONTENTS": "Table des Matières",
+        "GETTING_STARTED": "Commencer",
+        "INSTALLATION": "Installation",
+        "USAGE": "Utilisation",
+        "FIRST_PROGRAM": "Premier Programme",
+        "PROGRAMMING": "Programmation",
+        "VARIABLES": "Variables",
+        "OPERATORS": "Opérateurs",
+        "CONTROL_STRUCTURES": "Structures de Contrôle",
+        "FUNCTIONS": "Fonctions",
+        "LISTS": "Listes",
+        "OBJECTS": "Objets",
+        "COMMON_ERRORS": "Messages d'erreur courants"
     }
 }

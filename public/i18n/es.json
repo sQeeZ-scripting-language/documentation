@@ -4,6 +4,18 @@
         "DARK_MODE": "Modo Oscuro"
     },
     "SIDENAV": {
-        "TABLE_OF_CONTENTS": "Tabla de Contenidos"
+        "TABLE_OF_CONTENTS": "Tabla de Contenidos",
+        "GETTING_STARTED": "Empezando",
+        "INSTALLATION": "Instalación",
+        "USAGE": "Uso",
+        "FIRST_PROGRAM": "Primer Programa",
+        "PROGRAMMING": "Programación",
+        "VARIABLES": "Variables",
+        "OPERATORS": "Operadores",
+        "CONTROL_STRUCTURES": "Estructuras de Control",
+        "FUNCTIONS": "Funciones",
+        "LISTS": "Listas",
+        "OBJECTS": "Objetos",
+        "COMMON_ERRORS": "Mensajes de error comunes"
     }
 }

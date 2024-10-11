@@ -4,6 +4,18 @@
         "DARK_MODE": "Dunkler Modus"
     },
     "SIDENAV": {
-        "TABLE_OF_CONTENTS": "Inhaltsverzeichnis"
+        "TABLE_OF_CONTENTS": "Inhaltsverzeichnis",
+        "GETTING_STARTED": "Erste Schritte",
+        "INSTALLATION": "Installation",
+        "USAGE": "Verwendung",
+        "FIRST_PROGRAM": "Erstes Programm",
+        "PROGRAMMING": "Programmierung",
+        "VARIABLES": "Variablen",
+        "OPERATORS": "Operatoren",
+        "CONTROL_STRUCTURES": "Kontrollstrukturen",
+        "FUNCTIONS": "Funktionen",
+        "LISTS": "Listen",
+        "OBJECTS": "Objekte",
+        "COMMON_ERRORS": "Häufige Fehlermeldungen"
     }
 }
