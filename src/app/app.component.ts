@@ -11,6 +11,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { MatMenuModule } from '@angular/material/menu';
 import { Language } from './interfaces/language.interface';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { DataService } from './services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -24,19 +25,7 @@ export class AppComponent implements OnInit, OnDestroy {
   title = 'documentation';
   public mobileQuery!: MediaQueryList;
   public currentTheme: string = 'dark';
-  public languages: Language[] = [{
-    id: 'gb',
-    name: 'English'
-  }, {
-    id: 'es',
-    name: 'Español'
-  }, {
-    id: 'fr',
-    name: 'Français'
-  }, {
-    id: 'de',
-    name: 'Deutsch'
-  }];
+  public languages: Language[] = [];
   public currentLanguage: Language = {
     id: 'gb',
     name: 'English'
@@ -46,7 +35,8 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: any,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private dataService: DataService
   ) {
     const changeDetectorRef = inject(ChangeDetectorRef);
     const media = inject(MediaMatcher);
@@ -59,6 +49,7 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.currentTheme = this.getSystemTheme();
     this.setTheme();
+    this.languages = this.dataService.getLanguages();
   }
 
   ngOnDestroy(): void {
