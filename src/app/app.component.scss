@@ -26,6 +26,16 @@
     justify-content: space-between;
 }
 
+.language-trigger .fi {
+    width: 24px;
+    transform: translateY(-4px);
+}
+
+.language-select .fi {
+    width: 24px;
+    transform: translateY(-2px);
+}
+
 :host-context(.dark-theme) {
     mat-toolbar {
         background-color: #424242;

@@ -8,11 +8,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { isPlatformBrowser } from '@angular/common';
+import { MatMenuModule } from '@angular/material/menu';
+import { Language } from './interfaces/language.interface';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatToolbarModule, MatButtonModule, MatIconModule, MatSidenavModule, MatListModule, MatTooltipModule],
+  imports: [RouterOutlet, MatToolbarModule, MatButtonModule, MatIconModule, MatSidenavModule, MatListModule, MatTooltipModule, MatMenuModule],
   providers: [],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -21,6 +23,29 @@ export class AppComponent implements OnInit, OnDestroy {
   title = 'documentation';
   public mobileQuery!: MediaQueryList;
   public currentTheme: string = 'dark';
+  public languages: Language[] = [{
+    name: 'English',
+    i18n: 'en',
+    flag: 'fi fi-gb'
+  }, {
+    name: 'Español',
+    i18n: 'es',
+    flag: 'fi fi-es'
+  }, {
+    name: 'Français',
+    i18n: 'fr',
+    flag: 'fi fi-fr'
+  }, {
+    name: 'Deutsch',
+    i18n: 'de',
+    flag: 'fi fi-de'
+  }];
+  public currentLanguage: Language = {
+    name: 'English',
+    i18n: 'en',
+    flag: 'fi fi-gb'
+  };
+    
   public fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
 
   private _mobileQueryListener: () => void;
@@ -41,6 +66,10 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
+  }
+
+  setLanguage(language: Language): void {
+    this.currentLanguage = language;
   }
 
   toggleTheme(): void {
