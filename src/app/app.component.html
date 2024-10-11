@@ -1,9 +1,12 @@
 <div class="app-container" [class.is-mobile]="mobileQuery.matches">
     <mat-toolbar class="toolbar">
-        <button mat-icon-button (click)="snav.toggle()">
-            <mat-icon>menu</mat-icon>
-        </button>
-        <div>
+        <div class="menu">
+            <button mat-icon-button (click)="snav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <img src="logo.jpg" alt="sQeeZ-Scripting-Language">
+        </div>
+        <div class="actions">
             <button mat-icon-button [matMenuTriggerFor]="menu" class="language-trigger">
                 <span [class]="'fi fi-' + currentLanguage.id"></span>
             </button>

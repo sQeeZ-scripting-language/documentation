@@ -26,6 +26,20 @@
     justify-content: space-between;
 }
 
+.menu,
+.actions {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 0.5rem;
+
+    img {
+        height: 75%;
+        width: auto;
+        border-radius: 5px;
+    }
+}
+
 .language-trigger .fi {
     width: 24px;
     transform: translateY(-4px);
