@@ -12,14 +12,25 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    .logo {
+        width: 30%;
+        height: auto;
+    }
+    
+    .slogan {
+        width: 75%;
+        height: auto;
+    }
 }
 
-.logo {
-    width: 30%;
-    height: auto;
+.abstract {
+    text-align: center;
 }
 
-.slogan {
-    width: 75%;
-    height: auto;
+.key-components {
+    margin-top: 0;
+    a {
+        color: white;
+    }
 }
