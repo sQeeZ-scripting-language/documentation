@@ -31,7 +31,7 @@
         "INTERPRETER_DESCRIPTION": "The Interpreter is the key to making your code come alive! By executing the parsed AST, it makes sQeeZ a dynamic tool that can be used for both quick scripting tasks and complex applications. Get immediate feedback and powerful functionality at your fingertips!",
         "LANGUAGE_SERVER_DESCRIPTION": "Our comprehensive Language Server optimizes your coding experience in IDEs like VSCode. With features such as syntax highlighting, auto-completion, and error checking, you'll have all the tools you need to code efficiently and effectively in sQeeZ.",
         "DOCUMENTATION": "Documentation",
-        "DOCUMENTATION_DESCRIPTION": "Explore this comprehensive documentation to get started with sQeeZ! Whether you are new to the language or looking to gain a deeper understanding of its features, you will find valuable resources covering:",
+        "DOCUMENTATION_DESCRIPTION": "Explore this comprehensive documentation to get started with sQeeZ! Whether you are new to the language or looking to gain a deeper understanding of its features, you will find valuable resources covering",
         "GETTING_STARTED": "Getting Started",
         "GETTING_STARTED_DESCRIPTION": "Learn how to set up your environment and write your first sQeeZ code.",
         "BASIC_FUNCTIONALITY": "Basic Functionality",
