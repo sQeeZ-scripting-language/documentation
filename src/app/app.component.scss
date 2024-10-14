@@ -25,6 +25,8 @@
     display: flex;
     justify-content: space-between;
     height: 4rem;
+    background-color: var(--toolbar);
+    color: var(--font-color);
 }
 
 .menu,
@@ -56,12 +58,19 @@
     text-decoration: underline;
 }
 
+mat-sidenav {
+    background-color: var(--sidenav);
+    color: var(--font-color);
+    border-radius: 0;
+}
+
 .sidenav-content {
     display: flex;
     flex-direction: column;
     overflow: hidden;
     height: 100%;
     width: 100%;
+    background-color: var(--content);
 }
 
 router-outlet {
@@ -100,42 +109,16 @@ mat-expansion-panel {
     gap: 1rem;
 }
 
-:host-context(.dark-theme) {
-    mat-toolbar {
-        background-color: #424242;
-        color: #FFFFFF;
-    }
-    
-    mat-sidenav-container {
-        background-color: #303030;
-    }
-
-    mat-sidenav {
-        background-color: #383838;
-        color: #FFFFFF;
-    }
-}
-
 :host-context(.light-theme) {
     button {
-        color: #333333;
+        color: var(--font-color);
     }
 
     button:hover {
-        background-color: #FFFFFF;
+        background-color: rgba(255, 171, 242, 0.75) !important;
     }
 
-    mat-toolbar {
-        background-color: #F5F5F5;
-        color: #333333;
-    }
-    
-    mat-sidenav-container {
-        background-color: #FFFFFF;
-    }
-
-    mat-sidenav {
-        background-color: #E0E0E0;
-        color: #333333;
+    .controls button {
+        background-color: var(--toolbar);
     }
 }

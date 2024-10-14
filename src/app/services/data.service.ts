@@ -62,7 +62,21 @@ export class DataService {
     path: 'common-error-messages'
   }];
 
-  private routes: string[] = ['/', '/getting-started', '/getting-started/installation', '/getting-started/usage', '/getting-started/first-program', '/programming', '/programming/variables', '/programming/operators', '/programming/control-structures', '/programming/functions', '/programming/lists', '/programming/objects', '/common-error-messages'];
+  private routes: string[] = [
+    '/', 
+    '/getting-started', 
+    '/getting-started/installation', 
+    '/getting-started/usage', 
+    '/getting-started/first-program', 
+    '/programming', 
+    '/programming/variables', 
+    '/programming/operators', 
+    '/programming/control-structures', 
+    '/programming/functions', 
+    '/programming/lists', 
+    '/programming/objects', 
+    '/common-error-messages'
+  ];
 
   constructor(private deviceService: DeviceService) {}
 
