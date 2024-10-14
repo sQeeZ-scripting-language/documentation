@@ -1,6 +1,6 @@
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, Inject, OnDestroy, OnInit, PLATFORM_ID, inject } from '@angular/core';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
@@ -14,6 +14,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { DataService } from './services/data.service';
 import { MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle } from '@angular/material/expansion';
 import { Content } from './interfaces/content.interface';
+import { DeviceService } from './services/device.service';
 
 @Component({
   selector: 'app-root',
@@ -39,7 +40,9 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(
     @Inject(PLATFORM_ID) private platformId: any,
     private translateService: TranslateService,
-    private dataService: DataService
+    private deviceService: DeviceService,
+    private dataService: DataService,
+    private router: Router
   ) {
     const changeDetectorRef = inject(ChangeDetectorRef);
     const media = inject(MediaMatcher);
@@ -50,6 +53,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.deviceService.init();
     this.currentTheme = this.getSystemTheme();
     this.setTheme();
     this.languages = this.dataService.getLanguages();
@@ -72,6 +76,16 @@ export class AppComponent implements OnInit, OnDestroy {
 
   translate(key: string): string {
     return this.translateService.instant(key);
+  }
+
+  nextRoute(): void {
+    const route: string = this.dataService.nextRoute();
+    if (route) this.router.navigate([route]);
+  }
+
+  previousRoute(): void {
+    const route: string = this.dataService.previousRoute();
+    if (route) this.router.navigate([route]);
   }
 
   private getSystemTheme(): string {

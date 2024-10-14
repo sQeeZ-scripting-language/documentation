@@ -15,10 +15,14 @@ body {
 
 .dark-theme {
     background-color: #222222;
+    --background-color: #222222;
+    --font-color: white;
 }
 
 .light-theme {
     background-color: #f5f5f5;
+    --background-color: #f5f5f5;
+    --font-color: black;
 }
 
 app-root {

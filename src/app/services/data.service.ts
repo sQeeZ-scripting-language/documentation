@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Language } from '../interfaces/language.interface';
 import { Content } from '../interfaces/content.interface';
+import { DeviceService } from './device.service';
 
 @Injectable({
   providedIn: 'root'
@@ -61,7 +62,9 @@ export class DataService {
     path: 'common-error-messages'
   }];
 
-  constructor() {}
+  private routes: string[] = ['/', '/getting-started', '/getting-started/installation', '/getting-started/usage', '/getting-started/first-program', '/programming', '/programming/variables', '/programming/operators', '/programming/control-structures', '/programming/functions', '/programming/lists', '/programming/objects', '/common-error-messages'];
+
+  constructor(private deviceService: DeviceService) {}
 
   getLanguages(): Language[] {
     return this.languages;
@@ -70,4 +73,15 @@ export class DataService {
   getContent(): Content[] {
     return this.content;
   }
+
+  nextRoute(): string {
+    const currentIndex = this.routes.indexOf(this.deviceService.activeRoute);
+    return this.routes[currentIndex + 1];
+  }
+
+  previousRoute(): string {
+    const currentIndex = this.routes.indexOf(this.deviceService.activeRoute);
+    return this.routes[currentIndex - 1];
+  }
+  
 }

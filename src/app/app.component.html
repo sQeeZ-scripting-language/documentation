@@ -37,11 +37,11 @@
         <mat-sidenav-content class="sidenav-content">
             <router-outlet></router-outlet>
             <div class="controls">
-                <button mat-raised-button color="accent">
+                <button mat-raised-button color="accent" (click)="previousRoute()">
                     <mat-icon>arrow_back</mat-icon>
                 </button>
                 <div></div>
-                <button mat-raised-button color="accent">
+                <button mat-raised-button color="accent" (click)="nextRoute()">
                     <mat-icon>arrow_forward</mat-icon>
                 </button>
             </div>
