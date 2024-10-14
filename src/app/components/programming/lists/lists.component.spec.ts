@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ListsComponent } from './lists.component';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 describe('ListsComponent', () => {
   let component: ListsComponent;
@@ -8,7 +9,8 @@ describe('ListsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ListsComponent]
+      imports: [ListsComponent, TranslateModule.forRoot()],
+      providers: [TranslateService]
     })
     .compileComponents();
 

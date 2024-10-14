@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CommonErrorMessagesComponent } from './common-error-messages.component';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 describe('CommonErrorMessagesComponent', () => {
   let component: CommonErrorMessagesComponent;
@@ -8,7 +9,8 @@ describe('CommonErrorMessagesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CommonErrorMessagesComponent]
+      imports: [CommonErrorMessagesComponent, TranslateModule.forRoot()],
+      providers: [TranslateService]
     })
     .compileComponents();
 

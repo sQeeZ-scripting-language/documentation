@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UsageComponent } from './usage.component';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 describe('UsageComponent', () => {
   let component: UsageComponent;
@@ -8,7 +9,8 @@ describe('UsageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [UsageComponent]
+      imports: [UsageComponent, TranslateModule.forRoot()],
+      providers: [TranslateService]
     })
     .compileComponents();
 
