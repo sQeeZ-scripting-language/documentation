@@ -64,6 +64,10 @@ export class AppComponent implements OnInit, OnDestroy {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
 
+  openPlayground(): void {
+    window.location.href = 'https://sqeez-scripting-language.github.io/playground/';
+  }
+
   setLanguage(language: Language): void {
     this.currentLanguage = language;
     this.translateService.use(this.currentLanguage.id);
