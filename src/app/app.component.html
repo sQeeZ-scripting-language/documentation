@@ -7,7 +7,13 @@
             <img src="logo.jpg" alt="sQeeZ-Scripting-Language" routerLink="/" class="logo">
         </div>
         <div class="actions">
-            <button mat-icon-button [matMenuTriggerFor]="menu" class="language-trigger">
+            <button mat-icon-button (click)="toggleTheme()" [matTooltip]="currentTheme === 'light' ? translate('APP.DARK_MODE') : translate('APP.LIGHT_MODE')">
+                <mat-icon> {{ currentTheme === 'light' ? 'light_mode' : 'dark_mode' }} </mat-icon>
+            </button>
+            <button mat-icon-button (click)="openPlayground()" matTooltip="Playground">
+                <mat-icon>code</mat-icon>
+            </button>
+            <button mat-icon-button [matMenuTriggerFor]="menu" class="language-trigger" [matTooltip]="currentLanguage.name">
                 <span [class]="'fi fi-' + currentLanguage.id"></span>
             </button>
             <mat-menu #menu="matMenu">
@@ -20,9 +26,6 @@
                     }
                 }
             </mat-menu>
-            <button mat-icon-button (click)="toggleTheme()" [matTooltip]="currentTheme === 'light' ? translate('APP.DARK_MODE') : translate('APP.LIGHT_MODE')">
-                <mat-icon> {{ currentTheme === 'light' ? 'light_mode' : 'dark_mode' }} </mat-icon>
-            </button>
         </div>
     </mat-toolbar>
     <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">

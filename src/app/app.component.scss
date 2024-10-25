@@ -110,6 +110,8 @@ mat-expansion-panel {
 }
 
 :host-context(.light-theme) {
+    --mat-expansion-header-indicator-color: var(--font-color);
+    
     button {
         color: var(--font-color);
     }
